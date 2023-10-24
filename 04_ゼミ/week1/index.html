@@ -17,6 +17,10 @@
       <div id="display-jihanki-money">0</div>
     </section>
     <section>
+      <h4>↓お釣りレバー↓</h4>
+      <button id="button-change">レバー</button>
+    </section>
+    <section>
       <h3>商品を買う</h3>
       <button id="buy-button-tea">お茶(100円)</button>
     </section>
@@ -33,6 +37,7 @@
       const displayJihankiMoney = document.getElementById(
         "display-jihanki-money",
       )
+      const buttonChange = document.getElementById("button-change")
 
       // buyButtonTea を押した時の処理
       const buy = function () {
@@ -57,6 +62,15 @@
       }
 
       addBUtton100.onclick = plusminus
+
+      const charge = function () {
+        saifu += jihankiMoney
+        jihankiMoney = 0
+        displayJihankiMoney.textContent = jihankiMoney
+        displaySaifu.textContent = saifu
+      }
+
+      buttonChange.onclick = charge
     </script>
   </body>
 </html>
